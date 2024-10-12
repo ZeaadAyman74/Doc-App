@@ -6,6 +6,9 @@ class AppRouter {
   final navigatorKey = GlobalKey<NavigatorState>();
 
   Route? generateRoute(RouteSettings settings) {
+    // this arguments to be passed to any screen like this (argument as ClassName)
+    final arguments=settings.arguments;
+
     switch (settings.name){
       case Routes.onBoarding:
         return _getPageRoute(const OnboardingScreen());
