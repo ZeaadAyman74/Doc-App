@@ -33,6 +33,8 @@ dependencies:
   flutter_native_splash: ^2.4.0
   # Responsive
   flutter_screenutil: ^5.9.3
+  # Svg Images
+  flutter_svg: ^2.0.10+1
 
 
 dependency_overrides:
