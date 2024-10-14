@@ -17,10 +17,11 @@ class CustomButton extends StatelessWidget {
         style: ButtonStyle(
             backgroundColor: const MaterialStatePropertyAll(AppColors.mainBlue),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            minimumSize:
-                MaterialStatePropertyAll(Size(double.infinity, height ?? 55.h)),
+            minimumSize: MaterialStatePropertyAll(Size(double.infinity, height ?? 55.h)),
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.r)))),
+                borderRadius: BorderRadius.circular(16.r))),
+        padding: MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 12.w,vertical: 14.h))
+        ),
         child: Text(
           title,
           style: TextStyle(
