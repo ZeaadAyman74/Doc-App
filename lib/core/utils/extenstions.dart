@@ -1,4 +1,4 @@
-import 'package:advanced_app/core/di/di.dart';
+import 'package:advanced_app/core/di/dependency_injection.dart';
 import 'package:advanced_app/core/routing/router.dart';
 import 'package:flutter/material.dart';
 
@@ -42,4 +42,8 @@ extension NavigationExtension on BuildContext {
   void popDialog(){
     Navigator.of(this,rootNavigator: true).pop();
   }
+}
+
+extension Validation on String? {
+  bool get isNullOrEmpty => (this != null && this!.isNotEmpty) ? false : true;
 }

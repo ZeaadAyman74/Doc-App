@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+
   # State management
   flutter_bloc: ^8.1.6
   # Code generator
@@ -37,14 +38,16 @@ dependencies:
   flutter_svg: ^2.0.10+1
 
 
+
 dependency_overrides:
   intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.0
+  # provides a concrete way of generating files using Dart code
+  build_runner: ^2.4.9
 
 flutter:
   uses-material-design: true
