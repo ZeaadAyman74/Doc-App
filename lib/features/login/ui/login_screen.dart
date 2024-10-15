@@ -1,21 +1,16 @@
 import 'package:advanced_app/core/theming/text_styles.dart';
 import 'package:advanced_app/core/utils/spacing.dart';
 import 'package:advanced_app/core/widgets/custom_button.dart';
-import 'package:advanced_app/core/widgets/custom_text_form_field.dart';
-import 'package:advanced_app/features/login/ui/widgets/already_have_account_text.dart';
+import 'package:advanced_app/features/login/logic/login_cubit.dart';
+import 'package:advanced_app/features/login/ui/widgets/donot_have_account_text.dart';
+import 'package:advanced_app/features/login/ui/widgets/email_and_pass_widget.dart';
+import 'package:advanced_app/features/login/ui/widgets/login-bloc_listener.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  bool isObscure = true;
-  final formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,40 +31,36 @@ class _LoginScreenState extends State<LoginScreen> {
               style: TextStyles.font14GrayRegular,
             ),
             verticalSpace(30),
-            Form(
-                key: formKey,
-                child: Column(
-                  children: [
-                    const CustomTextForm(hintText: 'Email'),
-                    verticalSpace(15),
-                    CustomTextForm(
-                      hintText: 'Password',
-                      isObscureText: isObscure,
-                      suffixIcon: GestureDetector(
-                        onTap: () => setState(() {
-                          isObscure = !isObscure;
-                        }),
-                        child: Icon(isObscure
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                      ),
-                    ),
-                    verticalSpace(24),
-                    Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          'Forget Passwor?',
-                          style: TextStyles.font12BlueRegular,
-                        )),
-                    verticalSpace(45),
-                    CustomButton(title: 'Login', onPressed: () {},),
-                    verticalSpace(50),
-                    const AlreadyHaveAccountText()
-                  ],
-                ))
+            Column(
+              children: [
+                const EmailAndPassWidget(),
+                Align(
+                    alignment: AlignmentDirectional.centerEnd,
+                    child: Text(
+                      'Forget Password?',
+                      style: TextStyles.font12BlueRegular,
+                    )),
+                verticalSpace(45),
+                CustomButton(
+                  title: 'Login',
+                  onPressed: () {
+                    _onLoginButtonPressed(context);
+                  },
+                ),
+                verticalSpace(50),
+                const DoNotHaveAccount(),
+                const LoginBlocListener()
+              ],
+            )
           ],
         ),
       )),
     );
+  }
+
+  void _onLoginButtonPressed(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().login();
+    }
   }
 }
