@@ -3,6 +3,8 @@ import 'package:advanced_app/core/networking/dio_factory.dart';
 import 'package:advanced_app/core/routing/router.dart';
 import 'package:advanced_app/features/login/data/repos/login_repo.dart';
 import 'package:advanced_app/features/login/logic/login_cubit.dart';
+import 'package:advanced_app/features/signup/data/repos/sign_up_repo.dart';
+import 'package:advanced_app/features/signup/logic/sign_up_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,7 +12,6 @@ import 'package:get_it/get_it.dart';
 final sl = GetIt.instance;
 
 class ServiceLocator {
-
   void _registerModule<Repo extends Object, Cubit extends Object>(
     Repo Function(ApiService apiService) repoConstructor,
     Cubit Function(Repo repo) cubitConstructor,
@@ -26,9 +27,12 @@ class ServiceLocator {
     sl.registerLazySingleton<ApiService>(() => ApiService(dio));
 
     // login
-    _registerModule((apiService) => LoginRepo(apiService), (repo) => LoginCubit(repo));
+    _registerModule<LoginRepo, LoginCubit>(
+        (apiService) => LoginRepo(apiService), (repo) => LoginCubit(repo));
 
-    // sl.registerLazySingleton<LoginRepo>(() => LoginRepo(sl()));
-    // sl.registerLazySingleton<LoginCubit>(() => LoginCubit(sl()));
+    // Sign Up
+    _registerModule<SignUpRepo, SignUpCubit>(
+        (apiService) => SignUpRepo(apiService), (repo) => SignUpCubit(repo));
+
   }
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'login_state.dart';
+part of 'sign_up_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$LoginState<T> {
+mixin _$SignUpState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,16 +69,16 @@ mixin _$LoginState<T> {
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<T, $Res> {
-  factory $LoginStateCopyWith(
-          LoginState<T> value, $Res Function(LoginState<T>) then) =
-      _$LoginStateCopyWithImpl<T, $Res, LoginState<T>>;
+abstract class $SignUpStateCopyWith<T, $Res> {
+  factory $SignUpStateCopyWith(
+          SignUpState<T> value, $Res Function(SignUpState<T>) then) =
+      _$SignUpStateCopyWithImpl<T, $Res, SignUpState<T>>;
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<T, $Res, $Val extends LoginState<T>>
-    implements $LoginStateCopyWith<T, $Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$SignUpStateCopyWithImpl<T, $Res, $Val extends SignUpState<T>>
+    implements $SignUpStateCopyWith<T, $Res> {
+  _$SignUpStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -95,7 +95,7 @@ abstract class _$$InitialImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<T, $Res>
-    extends _$LoginStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
     implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
@@ -105,11 +105,11 @@ class __$$InitialImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$InitialImpl<T> implements _Initial<T> {
-  const _$InitialImpl();
+  _$InitialImpl();
 
   @override
   String toString() {
-    return 'LoginState<$T>.initial()';
+    return 'SignUpState<$T>.initial()';
   }
 
   @override
@@ -196,8 +196,8 @@ class _$InitialImpl<T> implements _Initial<T> {
   }
 }
 
-abstract class _Initial<T> implements LoginState<T> {
-  const factory _Initial() = _$InitialImpl<T>;
+abstract class _Initial<T> implements SignUpState<T> {
+  factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
@@ -209,7 +209,7 @@ abstract class _$$LoadingImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<T, $Res>
-    extends _$LoginStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$LoadingImpl<T>>
     implements _$$LoadingImplCopyWith<T, $Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl<T> _value, $Res Function(_$LoadingImpl<T>) _then)
@@ -219,11 +219,11 @@ class __$$LoadingImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$LoadingImpl<T> implements Loading<T> {
-  const _$LoadingImpl();
+  _$LoadingImpl();
 
   @override
   String toString() {
-    return 'LoginState<$T>.loading()';
+    return 'SignUpState<$T>.loading()';
   }
 
   @override
@@ -310,8 +310,8 @@ class _$LoadingImpl<T> implements Loading<T> {
   }
 }
 
-abstract class Loading<T> implements LoginState<T> {
-  const factory Loading() = _$LoadingImpl<T>;
+abstract class Loading<T> implements SignUpState<T> {
+  factory Loading() = _$LoadingImpl<T>;
 }
 
 /// @nodoc
@@ -325,7 +325,7 @@ abstract class _$$SuccessImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<T, $Res>
-    extends _$LoginStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
     implements _$$SuccessImplCopyWith<T, $Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
@@ -348,14 +348,14 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$SuccessImpl<T> implements Success<T> {
-  const _$SuccessImpl(this.data);
+  _$SuccessImpl(this.data);
 
   @override
   final T data;
 
   @override
   String toString() {
-    return 'LoginState<$T>.success(data: $data)';
+    return 'SignUpState<$T>.success(data: $data)';
   }
 
   @override
@@ -451,8 +451,8 @@ class _$SuccessImpl<T> implements Success<T> {
   }
 }
 
-abstract class Success<T> implements LoginState<T> {
-  const factory Success(final T data) = _$SuccessImpl<T>;
+abstract class Success<T> implements SignUpState<T> {
+  factory Success(final T data) = _$SuccessImpl<T>;
 
   T get data;
   @JsonKey(ignore: true)
@@ -471,7 +471,7 @@ abstract class _$$ErrorImplCopyWith<T, $Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<T, $Res>
-    extends _$LoginStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
+    extends _$SignUpStateCopyWithImpl<T, $Res, _$ErrorImpl<T>>
     implements _$$ErrorImplCopyWith<T, $Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl<T> _value, $Res Function(_$ErrorImpl<T>) _then)
@@ -483,7 +483,7 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
     Object? error = null,
   }) {
     return _then(_$ErrorImpl<T>(
-      error: null == error
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -494,14 +494,14 @@ class __$$ErrorImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$ErrorImpl<T> implements Error<T> {
-  const _$ErrorImpl({required this.error});
+  _$ErrorImpl(this.error);
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'LoginState<$T>.error(error: $error)';
+    return 'SignUpState<$T>.error(error: $error)';
   }
 
   @override
@@ -596,8 +596,8 @@ class _$ErrorImpl<T> implements Error<T> {
   }
 }
 
-abstract class Error<T> implements LoginState<T> {
-  const factory Error({required final String error}) = _$ErrorImpl<T>;
+abstract class Error<T> implements SignUpState<T> {
+  factory Error(final String error) = _$ErrorImpl<T>;
 
   String get error;
   @JsonKey(ignore: true)
