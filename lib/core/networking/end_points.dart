@@ -1,6 +1,7 @@
 class EndPoints {
   static const baseUrl='https://vcare.integration25.com/api/';
   static const login='auth/login';
+  static const signup='auth/register';
 }
 
 class ApiErrors {
