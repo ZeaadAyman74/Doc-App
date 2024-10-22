@@ -51,6 +51,21 @@ android {
         versionName flutterVersionName
     }
 
+    flavorDimensions += "default"  // if we want to make groups of flavors each group has dimension
+
+    productFlavors {
+        create("development") {
+            dimension = "default"
+            resValue "string", "app_name", "Docdoc Dev"
+            applicationIdSuffix = ".dev"
+        }
+        create("production") {
+            dimension = "default"
+            resValue "string", "app_name", "Docdoc"
+//            applicationIdSuffix = ".free"
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
