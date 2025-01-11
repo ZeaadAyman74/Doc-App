@@ -3,14 +3,15 @@ description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 1.0.0+1
+version: 1.0.2+1
 
 environment:
-  sdk: '>=3.3.2 <4.0.0'
+  sdk: "3.6.0"
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.6
+
   # State management
   flutter_bloc: ^8.1.6
   # Code generator
@@ -33,6 +34,10 @@ dependencies:
   flutter_native_splash: ^2.4.0
   # Responsive
   flutter_screenutil: ^5.9.3
+  # Svg Images
+  flutter_svg: ^2.0.10+1
+  firebase_core: ^3.10.0
+
 
 
 dependency_overrides:
@@ -41,8 +46,9 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.0
+  # provides a concrete way of generating files using Dart code
+  build_runner: ^2.4.9
 
 flutter:
   uses-material-design: true

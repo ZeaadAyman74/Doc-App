@@ -1,4 +1,4 @@
-import 'package:advanced_app/core/di/di.dart';
+import 'package:advanced_app/core/di/dependency_injection.dart';
 import 'package:advanced_app/core/routing/router.dart';
 import 'package:advanced_app/core/routing/routes.dart';
 import 'package:advanced_app/core/theming/colors.dart';

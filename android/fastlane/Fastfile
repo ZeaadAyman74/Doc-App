@@ -1,0 +1,17 @@
+default_platform(:android)
+
+platform :android do
+  desc "Lane for android app distribution"
+  lane :firebase_distribution do
+      sh "flutter clean"
+      sh "flutter build apk --split-per-abi --no-tree-shake-icons"
+ firebase_app_distribution(
+    app: "1:664988190415:android:44543ca6d6165d9a5c99ba",
+    firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
+#     android_artifact_type: "APK",
+    android_artifact_path: "../build/app/outputs/apk/release/app-arm64-v8a-release.apk",
+    testers: "zeaadayman92@gmail.com"
+      )
+  end
+
+end

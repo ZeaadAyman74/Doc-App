@@ -6,15 +6,21 @@ class AppRouter {
   final navigatorKey = GlobalKey<NavigatorState>();
 
   Route? generateRoute(RouteSettings settings) {
-    switch (settings.name){
+    // this arguments to be passed to any screen like this (argument as ClassName)
+    final arguments = settings.arguments;
+
+    switch (settings.name) {
       case Routes.onBoarding:
         return _getPageRoute(const OnboardingScreen());
       case Routes.login:
-        return _getPageRoute(const LoginScreen());
+        return _getPageRoute(BlocProvider(
+            create: (context) => sl<LoginCubit>(), child: const LoginScreen()));
+      case Routes.home:
+        return _getPageRoute(const HomeScreen());
       default:
         return _getPageRoute(Scaffold(
           body: Center(
-            child:Text('No Routes defined for ${settings.name}'),
+            child: Text('No Routes defined for ${settings.name}'),
           ),
         ));
     }
@@ -37,20 +43,25 @@ class CustomPageRouter<T> extends PageRouteBuilder<T> {
 
   CustomPageRouter(this.child)
       : super(
-      pageBuilder: (BuildContext context,
-          Animation<double> animation,
-          Animation<double> secondaryAnimation,) => child,
-      transitionDuration: const Duration(milliseconds: 300),
-      transitionsBuilder: (BuildContext context,
-          Animation<double> animation,
-          Animation<double> secondaryAnimation,
-          Widget child,) {
-        const begin = 0.0;
-        const end = 1.0;
-        var tween = Tween<double>(begin: begin, end: end);
-        return FadeTransition(
-          opacity: animation.drive(tween),
-          child: child,
-        );
-      });
+            pageBuilder: (
+              BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+            ) =>
+                child,
+            transitionDuration: const Duration(milliseconds: 300),
+            transitionsBuilder: (
+              BuildContext context,
+              Animation<double> animation,
+              Animation<double> secondaryAnimation,
+              Widget child,
+            ) {
+              const begin = 0.0;
+              const end = 1.0;
+              var tween = Tween<double>(begin: begin, end: end);
+              return FadeTransition(
+                opacity: animation.drive(tween),
+                child: child,
+              );
+            });
 }
