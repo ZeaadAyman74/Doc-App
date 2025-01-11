@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - development
+      - master
+      - main
 
 jobs:
   distribute_to_firebase:
