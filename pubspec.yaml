@@ -3,10 +3,10 @@ description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 1.0.0+1
+version: 1.0.2+1
 
 environment:
-  sdk: '>=3.3.2 <4.0.0'
+  sdk: "3.6.0"
 dependencies:
   flutter:
     sdk: flutter
@@ -36,6 +36,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # Svg Images
   flutter_svg: ^2.0.10+1
+  firebase_core: ^3.10.0
 
 
 
